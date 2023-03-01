@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Another Painter
+    </title>
+ 
+<body>
+
+<h2> Pavani Reddy Karumuri shows currency conversions</h2>
+
+<form>
+    <label for="form1_age">Enter base amount</label>
+    <input type ="number" id="form1_base" name="form1_age" min=10 max=50 step=2 value=50> <br>
+
+    <label for="form1_nick">Enter the conversion rate</label>
+    <input type ="number" id="form1_conversion" name="form1_nick" value=35> <br>
+
+    <input type="button" onclick="convert()" value="Show conversions">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function convert(){
+    console.log("Getting form values")
+    base = document.getElementById("form1_base").value
+    conversion = document.getElementById("form1_conversion").value
+    toShow=" "
+    let multiply=1;
+    for(var i=0;i<5;i++){
+        let res=multiply*base*conversion;
+        res=Math.round(res*10)/10;
+        toShow+=" "+base*multiply+" value is "+res+";"
+        multiply*=2;
+    }
+    for (var i=base;i<base+5;i=i*2){
+
+    }
+    
+    document.getElementById("result").innerHTML="Conversions are:"+toShow
+    
+}
+</script>
+
+</body>
+</html> 
