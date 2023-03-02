@@ -43,6 +43,52 @@ function convert(){
     
 }
 </script>
+<form>
+    <input type="radio" id="average" name="color" value="mean"   
+      onclick="chooseOp()" >
+    <label for="average">average</label></br>
+  
+    <input type="radio" id="max" name="color" 
+       value="maximum" onclick="chooseOp()">
+    <label for="max">max</label></br>
+  
+    <input type="radio" id="min" name="color"   
+       value="minimum" onclick="chooseOp()">
+    <label for="min">min</label></br>
+
+    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+    <p id="res"></p>
+  </form>
+  <script>
+  function chooseOp(){
+    
+        console.log("Getting input")
+        base = document.getElementById("form1_base").value
+        conversion = document.getElementById("form1_conversion").value
+        average= document.getElementById("average").checked
+        max = document.getElementById("max").checked
+        min = document.getElementById("min").checked
+        var average;
+        var max;
+        var min;
+        var value;
+        if (average){
+            console.log(base+ " "+conversion);
+            value = (parseInt(base)+parseInt(conversion))/2
+            
+        document.getElementById("res").innerHTML = value;
+        }
+        else if (max) {
+            value=Math.max(base,conversion); 
+        document.getElementById("res").innerHTML = value;
+        } else {
+            value=Math.min(base,conversion);  
+        document.getElementById("res").innerHTML = value; 
+        }   
+    }
+
+  
+</script>
 
 </body>
 </html> 
