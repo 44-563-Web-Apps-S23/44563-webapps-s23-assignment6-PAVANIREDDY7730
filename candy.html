@@ -56,7 +56,29 @@ function selectBox(){
         }
         document.getElementById("result").innerHTML = JSON.stringify(my_candy_box);
 }
+function updateBox(){
+    var size = document.getElementById("size").value
+    var price=document.getElementById("price").value
+    my_candy_box.size=size;
+    my_candy_box.price=price;
+    document.getElementById("res").innerHTML=JSON.stringify(my_candy_box)
+    }
 </script>
+<form>
+    <label for="form1_age">Enter the size</label>
+    <input type ="text" id="size" name="form1_age" min=10 max=50 step=2 value=size> <br>
+
+    <label for="form1_nick">Enter price</label>
+    <input type ="text" id="price" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="updateBox()" value="Update the box”">
+</form>
+<p id="res"></p>
+<script>
+    
+</script>
+
+
 
 </body>
 </html> 
