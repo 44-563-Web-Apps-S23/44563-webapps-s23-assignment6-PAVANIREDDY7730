@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <title>CANDY Checkboxes</title>
+ 
+<body>
+
+<h2>PavaniReddy chooses candy</h2>
+
+<form>
+    <label for="form1_age">Dark Chocolate </label>
+    <input type ="checkbox" id="darkChocolate" name="form1_age" min=10 max=50 step=2 value=True> <br>
+
+    <label for="form1_nick">Nuts</label>
+    <input type ="checkbox" id="nuts" name="form1_nick" value=True> <br>
+    
+    <label for="form1_nick">Chewy</label>
+    <input type ="checkbox" id="chewy" name="form1_nick" value=False> <br>
+
+    <input type="button" onclick="selectBox()" value="Select a box">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+var my_candy_box={};
+
+function selectBox(){
+    my_candy_box={};
+    let dark=document.getElementById("darkChocolate").checked
+    let nuts=document.getElementById("nuts").checked
+    let chewy=document.getElementById("chewy").checked
+    if(dark)
+        {
+            my_candy_box.dark = true;
+        }
+        else
+        {
+            my_candy_box.dark = false;
+        }
+    if(nuts)
+        {
+            my_candy_box.nuts = true;
+        }
+    else
+        {
+            my_candy_box.nuts = false;
+        }
+    if(chewy)
+        {
+            my_candy_box.chewy = true;
+        }
+    else
+        {
+            my_candy_box.chewy = false;
+        }
+        document.getElementById("result").innerHTML = JSON.stringify(my_candy_box);
+}
+</script>
+
+</body>
+</html> 
